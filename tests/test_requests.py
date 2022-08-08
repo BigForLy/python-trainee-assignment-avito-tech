@@ -1,5 +1,5 @@
 import asyncio
-from requests import get_text_by_url
+from matrix.requests import get_text_by_url
 import httpx
 import pytest
 

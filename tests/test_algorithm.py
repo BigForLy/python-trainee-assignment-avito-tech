@@ -1,5 +1,6 @@
 from typing import List
-from main import get_matrix, get_elements
+from matrix.algorithm import get_matrix
+from matrix.services import get_elements
 import pytest
 import asyncio
 
@@ -17,6 +18,7 @@ def get_traversal():
         80, 40, 30, 20,
         60, 100, 110, 70,
     ]
+
 
 def test_get_elements():
     result: List[int] = get_elements('|  10 |  20 |  30 |  40 |')

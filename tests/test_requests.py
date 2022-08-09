@@ -1,6 +1,5 @@
 import asyncio
 from matrix.requests import get_text_by_url
-import httpx
 import pytest
 
 
@@ -10,5 +9,5 @@ def matrix_url():
 
 
 def test_requests_success(matrix_url):
-    result: httpx.Response = asyncio.run(get_text_by_url(matrix_url))
-    assert result.status_code == 200, result.text
+    result: str = asyncio.run(get_text_by_url(matrix_url))
+    assert result != "", result

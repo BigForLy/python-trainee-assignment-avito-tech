@@ -25,9 +25,8 @@ class Algorithm:
 
 
 async def get_matrix(url: str) -> List[int]:
-    response: httpx.Response = await get_text_by_url(url)
-    assert response.status_code == CODE_OK, response.text
-    rows = response.text.split("\n")
+    text_by_url: str = await get_text_by_url(url)
+    rows = text_by_url.split("\n")
     alg = Algorithm()
     # Только в каждой второй строчке начиная с первой и до предпоследней есть значения
     for row in rows[1:-1:2]:
